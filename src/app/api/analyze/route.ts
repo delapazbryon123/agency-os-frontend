@@ -3,11 +3,16 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export async function POST(req: Request) {
   try {
-    const { url } = await req.json();
+    const { url: rawUrl } = await req.json();
 
-    if (!url) {
+    if (!rawUrl) {
       return NextResponse.json({ error: "URL is required" }, { status: 400 });
     }
+
+    // Normalize URL — handle "apple.com", "www.apple.com", "http://..." etc.
+    const url = rawUrl.trim().match(/^https?:\/\//i)
+      ? rawUrl.trim()
+      : `https://${rawUrl.trim()}`;
 
     const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY;
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
@@ -18,6 +23,7 @@ export async function POST(req: Request) {
 
     // 1. Scrape Website using Firecrawl
     console.log(`[API] Scraping URL: ${url}`);
+
     const scrapeResponse = await fetch("https://api.firecrawl.dev/v1/scrape", {
       method: "POST",
       headers: {
