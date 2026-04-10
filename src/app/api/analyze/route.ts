@@ -150,7 +150,7 @@ For data that must be estimated, use industry benchmarks and clearly label them 
 ### SECTION 12: Summary & Next Steps
 - 3-sentence summary
 - "Recommended Next Steps" as a numbered list (5 items)
-- A CTA box: "Ready to accelerate your SEO growth? I am standing by to implement these strategies and drive measurable ROI for your business. Schedule a strategy call today." (Use language that reflects a solo expert/consultant, NOT an agency or team).
+- A CTA box: "Ready to accelerate your SEO growth? I am standing by to implement these strategies and drive measurable ROI for your business. Schedule a strategy call today or email me at Delapazbryon123@gmail.com" (Use language that reflects a solo expert/consultant, NOT an agency or team. Make the email a clickable mailto: link).
 
 ### APPENDIX: What to Export from Uber Suggest
 - Checkbox list of exports that would improve the next version of this report
