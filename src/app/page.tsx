@@ -54,7 +54,12 @@ export default function Home() {
 
   const handleDownload = useCallback(() => {
     if (!report) return;
-    const domainName = (() => { try { return new URL(url).hostname.replace("www.", ""); } catch { return "client"; } })();
+    const domainName = (() => {
+      try {
+        const normalized = url.trim().match(/^https?:\/\//i) ? url.trim() : `https://${url.trim()}`;
+        return new URL(normalized).hostname.replace("www.", "");
+      } catch { return "client"; }
+    })();
     const filename = `${domainName}_SEO_Report_${new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" }).replace(" ", "")}.html`;
     const blob = new Blob([report], { type: "text/html" });
     const link = document.createElement("a");
@@ -108,10 +113,10 @@ export default function Home() {
                         <Globe className="h-5 w-5 text-zinc-500" />
                       </div>
                       <input
-                        type="url" id="url" name="url" value={url}
+                        type="text" id="url" name="url" value={url}
                         onChange={(e) => setUrl(e.target.value)}
                         className="block w-full pl-12 pr-4 py-4 bg-black/50 border border-white/10 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-500/50 transition-all"
-                        placeholder="https://clientwebsite.com"
+                        placeholder="apple.com or https://clientwebsite.com"
                         required
                       />
                     </div>
