@@ -166,7 +166,7 @@ Now generate the complete HTML report. Remember: output ONLY the HTML document, 
 `;
 
     // Try primary model, fall back on 503 overload errors
-    const MODEL_CASCADE = ["gemini-2.5-flash", "gemini-1.5-flash", "gemini-1.5-pro"];
+    const MODEL_CASCADE = ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"];
     let result: any = null;
     let lastError: any = null;
 
