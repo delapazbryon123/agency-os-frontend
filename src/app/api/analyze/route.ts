@@ -91,7 +91,8 @@ For data that must be estimated, use industry benchmarks and clearly label them 
 - Large client website name: ${hostname}
 - "SEO Performance Report"
 - Date: ${today}
-- "Prepared by: Agency OS — AI-Powered SEO Intelligence"
+- "Prepared by: Bryon Delapaz"
+- "Contact: Delapazbryon123@gmail.com"
 
 ### SECTION 2: Executive Summary
 - 2–3 paragraph summary of the site's current SEO state.
